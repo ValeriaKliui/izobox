@@ -1,13 +1,14 @@
-import { BigText } from "@shared/Typography/Typography";
-import { Arrow, Option, TitleContainer } from "./styled";
-import { useState } from "react";
 import { EXTRA_OPTIONS } from "@constants/index";
 import { Button } from "@shared/Button";
+import { BigText } from "@shared/Typography/Typography";
+import { useState } from "react";
+
+import { Arrow, Gallery, GalleryPhoto, Option, Options, TitleContainer } from "./styled";
 
 export const UpgradeBasic = () => {
     const [isShown, setIsShown] = useState(false);
 
-    const toggleUpgrade = () => setIsShown(prev => !prev)
+    const toggleUpgrade = () => setIsShown((prev) => !prev);
 
     return (
         <div className="wrapper">
@@ -16,21 +17,22 @@ export const UpgradeBasic = () => {
                 <Arrow $isShown={isShown} />
             </TitleContainer>
             <BigText>Добавить дополнительные опции</BigText>
-            {isShown &&
-                <div>
-                    {EXTRA_OPTIONS.map(({ option, description, photo, price, galleryPhotos }) => <Option>
-                        <h4>
-                            {option}
-                        </h4>
-                        <p>{description}</p>
-                        <h4>
-                            {price.toLocaleString()} руб.
-                        </h4>
-                        <Button>
-                            Добавить
-                        </Button>
-                    </Option>)}
-                </div>}
+            {isShown && (
+                <Options>
+                    {EXTRA_OPTIONS.map(
+                        ({ option, description, photo, price, galleryPhotos }) => (
+                            <Option>
+                                <img src={photo} />
+                                <div><h4>{option}</h4>
+                                    <p>{description}</p></div>
+                                <Button>Добавить</Button>
+                                <Gallery> {galleryPhotos.map(photo => <GalleryPhoto src={photo} />)}</Gallery>
+                                <h4>{price.toLocaleString()} руб.</h4>
+                            </Option>
+                        ),
+                    )}
+                </Options>
+            )}
         </div>
     );
-}
+};

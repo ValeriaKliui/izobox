@@ -1,4 +1,4 @@
-import { theme, Theme } from "@providers/Theme";
+import { Theme,theme } from "@providers/Theme";
 import styled from "styled-components";
 
 import { ButtonStyledProps } from "./interfaces";

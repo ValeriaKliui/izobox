@@ -1,5 +1,6 @@
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
+
 import { FlexGap } from "../styled";
 import { Label } from "./styled";
 

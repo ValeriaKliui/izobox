@@ -1,14 +1,16 @@
+import { useIzobox } from "@hooks/useIzobox";
 import { MediumText } from "@shared/Typography/Typography";
 import { FC, useState } from "react";
-import { useIzobox } from "@hooks/useIzobox";
+
 import { TABS } from "./interfaces";
-import { Tab, Tabs, Container, Photos, Video, Videos, Iframe } from "./styled";
+import { Container, Iframe, Photos, Tab, Tabs, Video, Videos } from "./styled";
 
 export const Description: FC = () => {
     const [choosenTab, setChoosenTab] = useState<TABS>(TABS.description);
 
     const chooseTab = (tab: TABS) => () => setChoosenTab(tab);
-    const { izobox, chooseIzobox } = useIzobox();
+    const { izobox } = useIzobox();
+    console.log(izobox.type)
 
     return (
         <Container className="wrapper">
@@ -40,8 +42,8 @@ export const Description: FC = () => {
             {choosenTab === TABS.video && (
                 <Videos>
                     {izobox.videos.map((videoSrc) => (
-                        <Video>
-                            <Iframe src={videoSrc} />
+                        <Video key={videoSrc}>
+                            <Iframe src={videoSrc} referrerPolicy="strict-origin-when-cross-origin" />
                         </Video>
                     ))}
                 </Videos>

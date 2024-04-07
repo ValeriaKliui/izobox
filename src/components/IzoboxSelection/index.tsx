@@ -2,16 +2,17 @@ import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { Button } from "@shared/Button";
 import { useState } from "react";
+
 import { Colors } from "./Colors";
 import {
-    IzoboxContainer,
-    Gallery,
-    Properties,
-    Label,
+    Discount,
     FlexGap,
+    Gallery,
+    IzoboxContainer,
+    Label,
     Price,
     PriceWithoutDiscount,
-    Discount,
+    Properties,
 } from "./styled";
 import { Windows } from "./Windows";
 

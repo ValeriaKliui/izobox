@@ -19,7 +19,7 @@ export const useIzobox = () => {
 
   const value: IzoboxContextType = useMemo(
     () => ({ izobox: choosenIzobox, chooseIzobox }),
-    [choosenIzobox],
+    [choosenIzobox.type],
   );
 
   return value;

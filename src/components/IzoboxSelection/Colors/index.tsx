@@ -1,5 +1,6 @@
 import { useIzobox } from "@hooks/useIzobox";
 import { FC, useState } from "react";
+
 import { ColorsProps } from "./interfaces";
 import { Color, ColorsContainer, Container } from "./styled";
 

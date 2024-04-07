@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import quoteImg from "@assets/icons/quote.svg";
+import styled from "styled-components";
 
 export const Background = styled.div`
   background-color: ${({ theme: { colors } }) => colors.background};

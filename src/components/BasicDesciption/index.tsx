@@ -1,7 +1,8 @@
 import { Subtext } from "@components/Footer/styled";
 import { IZOBOXES } from "@constants/index";
 import { Fragment } from "react/jsx-runtime";
-import { Dimensions, StyledLi, Container, Title } from "./styled";
+
+import { Container, Dimensions, StyledLi, Title } from "./styled";
 
 export const BasicDescription = () => (
     <Container className="wrapper">

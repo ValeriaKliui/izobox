@@ -1,6 +1,7 @@
 import { IZOBOXES } from "@constants/index";
-import { createContext, FC, ReactNode, useMemo, useState } from "react";
 import { useIzobox } from "@hooks/useIzobox";
+import { createContext, FC, ReactNode, useMemo, useState } from "react";
+
 import { Izobox, IzoboxContextType } from "./interfaces";
 
 export const IzoboxContext = createContext<IzoboxContextType | null>(null);

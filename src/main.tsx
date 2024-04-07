@@ -3,8 +3,8 @@ import { Theme } from "@providers/Theme/index";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { PageLayout } from "./pages/layout";
 
+import { PageLayout } from "./pages/layout";
 import { MainPage } from "./pages/MainPage";
 import { PoliticsPage } from "./pages/PoliticsPage";
 import { GlobalStyles } from "./styled";
