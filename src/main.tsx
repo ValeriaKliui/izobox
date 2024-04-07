@@ -1,26 +1,19 @@
-import { Footer } from "@components/Footer/index.tsx";
-import { Header } from "@components/Header/index.tsx";
-import { Theme } from "@providers/Theme/index.tsx";
+import { IzoboxProvider } from "@providers/IzoboxProvider";
+import { Theme } from "@providers/Theme/index";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { PageLayout } from "./pages/layout";
 
-import { MainPage } from "./pages/MainPage.tsx";
-import { GlobalStyles } from "./styled.ts";
-
-const PageLayout = () => (
-  <>
-    <Header />
-    <Outlet />
-    <Footer />
-  </>
-);
+import { MainPage } from "./pages/MainPage";
+import { PoliticsPage } from "./pages/PoliticsPage";
+import { GlobalStyles } from "./styled";
 
 const router = createBrowserRouter([
   {
     element: <PageLayout />,
     path: "/",
-    children: [{ element: <MainPage />, index: true }],
+    children: [{ element: <MainPage />, index: true }, { element: <PoliticsPage />, path: 'politics' }],
   },
 ]);
 
@@ -28,7 +21,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Theme>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      <IzoboxProvider>
+        <RouterProvider router={router} /></IzoboxProvider>
     </Theme>
   </React.StrictMode>,
 );

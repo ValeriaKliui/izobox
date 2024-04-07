@@ -4,8 +4,8 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 2em;
-  width: 100%;
   margin-top: auto;
+  padding: 2em 0;
 `;
 export const LinksList = styled.ul`
   display: grid;

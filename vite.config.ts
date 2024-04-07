@@ -12,6 +12,7 @@ export default defineConfig({
       "@constants": resolve(__dirname, "./src/constants"),
       "@providers": resolve(__dirname, "./src/providers"),
       "@shared": resolve(__dirname, "./src/shared"),
+      "@hooks": resolve(__dirname, "./src/hooks"),
     },
   },
   plugins: [svgr(), react()],

@@ -63,6 +63,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-size: 16px;
     font-family: Montserrat-SemiBold;
   }
+  ul {
+    padding: 0 1.5em;
+  }
   li {
     list-style-type: none;
   }
@@ -79,19 +82,41 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-family: Montserrat-Bold;
     font-size: 3.1em;
   }
+  h3 {
+    font-family: Montserrat-SemiBold;
+    font-size: 2.5em;
+  }
+  h4 {
+    font-family: Montserrat-Bold;
+    font-size: 1.8em;
+  }
+  h5 {
+    font-family: Montserrat-Bold;
+    font-size: 1.13em;
+  }
   h1,
   h2,
+  h3,
+  h4,
+  h5,
   p {
     margin: 0;
   }
   .wrapper {
     max-width: 1140px;
     margin: 0 auto;
+    width: 100%;
   }
   .semibold {
     font-family: Montserrat-SemiBold;
   }
   .bold {
     font-family: Montserrat-Bold;
+  }
+  .primary-text {
+    color: ${({ theme: { colors } }) => colors.main};
+  }
+  .underline {
+    text-decoration: underline;
   }
 `;

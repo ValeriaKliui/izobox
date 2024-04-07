@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 import { ThemeProps } from "./interfaces";
 
-const theme = {
+export const theme = {
   colors: {
     sub: "#BFC3CF",
     dark: "#252525",

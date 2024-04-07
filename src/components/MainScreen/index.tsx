@@ -43,7 +43,7 @@ export const MainScreen = () => (
       <GalleryContainer>
         <Gallery>
           {IMAGES.map((img) => (
-            <Photo src={img} />
+            <Photo src={img} key={img} />
           ))}
         </Gallery>
         <MoreText className="semibold">Больше фото</MoreText>
