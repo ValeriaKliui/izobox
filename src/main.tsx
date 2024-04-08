@@ -1,7 +1,9 @@
 import { IzoboxProvider } from "@providers/IzoboxProvider";
 import { Theme } from "@providers/Theme/index";
+import { store } from "@store/index";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { PageLayout } from "./pages/layout";
@@ -13,16 +15,22 @@ const router = createBrowserRouter([
   {
     element: <PageLayout />,
     path: "/",
-    children: [{ element: <MainPage />, index: true }, { element: <PoliticsPage />, path: 'politics' }],
+    children: [
+      { element: <MainPage />, index: true },
+      { element: <PoliticsPage />, path: "politics" },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Theme>
-      <GlobalStyles />
-      <IzoboxProvider>
-        <RouterProvider router={router} /></IzoboxProvider>
-    </Theme>
+    <Provider store={store}>
+      <Theme>
+        <GlobalStyles />
+        <IzoboxProvider>
+          <RouterProvider router={router} />
+        </IzoboxProvider>
+      </Theme>
+    </Provider>
   </React.StrictMode>,
 );

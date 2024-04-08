@@ -1,14 +1,14 @@
+import { ColorModal } from "@components/ColorModal";
 import { Description } from "@components/Description";
 import { IzoboxSelection } from "@components/IzoboxSelection";
 import { MainScreen } from "@components/MainScreen";
 import { Review } from "@components/Review";
 import { UpgradeBasic } from "@components/UpgradeBasic";
-import { IZOBOXES } from "@constants/index";
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 
 export const MainPage = () => {
-  const { izobox } = useIzobox()
+  const { izobox } = useIzobox();
 
   return (
     <>
@@ -17,6 +17,7 @@ export const MainPage = () => {
       <IzoboxSelection />
       <Description />
       {izobox.type === IzoboxType.basic && <UpgradeBasic />}
+      <ColorModal />
     </>
   );
-}
+};

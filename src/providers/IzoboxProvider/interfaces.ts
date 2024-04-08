@@ -8,6 +8,7 @@ export interface Izobox {
   type: IzoboxType;
   colorsInside: string[];
   colorsOutside: string[];
+  allColors?: string[];
   videos: string[];
   photoWithoutWindow?: string;
   windows?: { with: string; without: string };
@@ -17,8 +18,8 @@ export interface Izobox {
   extraDescriptionComponent?: ReactNode;
 }
 export enum IzoboxType {
-  basic = "Basic",
-  pro = "Pro",
+  basic = "basic",
+  pro = "pro",
 }
 export interface IzoboxContextType {
   izobox: Izobox;

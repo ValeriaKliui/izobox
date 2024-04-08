@@ -13,6 +13,7 @@ export default defineConfig({
       "@providers": resolve(__dirname, "./src/providers"),
       "@shared": resolve(__dirname, "./src/shared"),
       "@hooks": resolve(__dirname, "./src/hooks"),
+      "@store": resolve(__dirname, "./src/store"),
     },
   },
   plugins: [svgr(), react()],

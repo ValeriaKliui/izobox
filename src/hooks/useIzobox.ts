@@ -1,25 +1,27 @@
 import { IZOBOXES } from "@constants/index";
 import {
-  Izobox,
   IzoboxContextType,
   IzoboxType,
 } from "@providers/IzoboxProvider/interfaces";
-import { useCallback, useMemo, useState } from "react";
+import { chooseIzobox, selectIzobox } from "@store/izobox/izoboxSlice";
+import { useCallback, useMemo } from "react";
+
+import { useAppDispatch, useAppSelector } from "./typedHooks";
 
 export const useIzobox = () => {
-  const [choosenIzobox, setChoosenIzobox] = useState<Izobox>(IZOBOXES.basic);
+  const izoboxType = useAppSelector(selectIzobox);
+  const dispatch = useAppDispatch();
 
-  const chooseIzobox = useCallback(
-    (izobox: IzoboxType) => () =>
-      izobox === IzoboxType.basic
-        ? setChoosenIzobox(IZOBOXES.basic)
-        : setChoosenIzobox(IZOBOXES.pro),
-    [],
+  const chooseIzoboxType = useCallback(
+    (izobox: IzoboxType) => {
+      dispatch(chooseIzobox(izobox));
+    },
+    [dispatch],
   );
 
   const value: IzoboxContextType = useMemo(
-    () => ({ izobox: choosenIzobox, chooseIzobox }),
-    [choosenIzobox.type],
+    () => ({ izobox: IZOBOXES[izoboxType], chooseIzobox: chooseIzoboxType }),
+    [izoboxType, chooseIzoboxType],
   );
 
   return value;

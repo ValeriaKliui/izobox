@@ -4,24 +4,24 @@ import Basic2 from "@assets/img/basic-2.png";
 import Basic3 from "@assets/img/basic-3.png";
 import Basic4 from "@assets/img/basic-4.png";
 import ReviewImg from "@assets/img/elzhdej.png";
+import Gallery from "@assets/img/gallery.png";
+import InsideAngle from "@assets/img/insida-angle.png";
+import Inside from "@assets/img/inside.png";
+import Lamp from "@assets/img/lamp.png";
+import Light from "@assets/img/light.png";
 import Pro from "@assets/img/pro.png";
 import Pro1 from "@assets/img/pro-1.png";
 import Pro2 from "@assets/img/pro-2.png";
 import Pro3 from "@assets/img/pro-3.png";
 import Pro4 from "@assets/img/pro-4.png";
 import Pro5 from "@assets/img/pro-5.png";
+import Shelf from "@assets/img/shelf.png";
+import ShelfComplect from "@assets/img/shelf-complect.png";
+import Wheels from "@assets/img/wheels.png";
+import Wheel from "@assets/img/whell.png";
 import BasicWithoutWindow from "@assets/img/without-window.png";
 import { BasicDescription } from "@components/BasicDesciption";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
-import Shelf from '@assets/img/shelf.png';
-import Lamp from '@assets/img/lamp.png';
-import Light from '@assets/img/light.png';
-import ShelfComplect from '@assets/img/shelf-complect.png';
-import Wheels from '@assets/img/wheels.png';
-import Wheel from '@assets/img/whell.png';
-import InsideAngle from '@assets/img/insida-angle.png';
-import Inside from '@assets/img/inside.png';
-import Gallery from '@assets/img/gallery.png';
 
 export const NAV_LINKS = [
   { title: "Фото", link: "" },
@@ -72,12 +72,12 @@ export const IZOBOXES = {
     ],
     equipment: [
       "звукоизоляционное триплекс-окно - 1шт",
-      "встроенная бесшумная вентиляция - 1шт",
-      "внешняя усиленная вентиляция - 1шт",
-      "сетевой фильтр - 1шт",
+      "встроенная бесшумная вентиляция - 1шт",
+      "внешняя усиленная вентиляция - 1шт",
+      "сетевой фильтр - 1шт",
       "LED светильник - 1шт",
-      "столик для оборудования - 1шт",
-      "кабель порт - 1шт",
+      "столик для оборудования - 1шт",
+      "кабель порт - 1шт",
     ],
     features: [
       "базовый уровень звукоизоляции",
@@ -98,8 +98,8 @@ export const IZOBOXES = {
       "#29E886",
       "#0d7fa4",
       "#98aca2",
-    ],
-    colorsOutside: ["#FE9B30", "#F92E32", "#143F86", "#3CA5E9"],
+    ] as const,
+    colorsOutside: ["#FE9B30", "#F92E32", "#143F86", "#3CA5E9"] as const,
     allColors: [
       "#d7e2f0",
       "#18fff8",
@@ -150,8 +150,8 @@ export const IZOBOXES = {
       "#5c77ce",
       "#a67161",
       "#16b847",
-      "#cc1e2e"
-    ],
+      "#cc1e2e",
+    ] as const,
     galleryPhotos: [Basic1, Basic2, Basic3, Basic4],
     extraDescriptionComponent: <BasicDescription />,
     videos: [
@@ -166,7 +166,7 @@ export const IZOBOXES = {
     type: IzoboxType.pro,
     price: 450000,
     descriptionText:
-      "IzoBox™ Pro – кабина изготовленная специально для Вас на заказ: любой размер, внешний вид, функциональность твоего пространства! Это может быть студия, домашний кинотеатр, мобильный офис или даже целое звукоизолированная аудитория! Больше не надо затевать долгострой, более того вкладывать деньги в то, что Вы никогда не разберете и не перевезете! Звукоизоляционные кабины IzoRoom™ Custom – абсолютная альтернатива традиционной звукоизоляционной отделке.",
+      "IzoBox™ Pro – кабина изготовленная специально для Вас на заказ: любой размер, внешний вид, функциональность твоего пространства! Это может быть студия, домашний кинотеатр, мобильный офис или даже целое звукоизолированная аудитория! Больше не надо затевать долгострой, более того вкладывать деньги в то, что Вы никогда не разберете и не перевезете! Звукоизоляционные кабины IzoRoom™ Custom – абсолютная альтернатива традиционной звукоизоляционной отделке.",
     galleryPhotos: [Pro1, Pro2, Pro3, Pro4, Pro5],
     photo: Pro,
     videos: [
@@ -181,6 +181,7 @@ export const IZOBOXES = {
 
 export const EXTRA_OPTIONS = [
   {
+    id: 1,
     option: "Полка",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
@@ -189,6 +190,7 @@ export const EXTRA_OPTIONS = [
     price: 18500,
   },
   {
+    id: 2,
     option: "Комплект полок",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
@@ -197,6 +199,7 @@ export const EXTRA_OPTIONS = [
     price: 18500,
   },
   {
+    id: 3,
     option: "Колёса опорные",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
@@ -205,6 +208,7 @@ export const EXTRA_OPTIONS = [
     price: 18500,
   },
   {
+    id: 4,
     option: "Светильник",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
@@ -213,6 +217,7 @@ export const EXTRA_OPTIONS = [
     price: 18500,
   },
   {
+    id: 5,
     option: "Светильник",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
@@ -221,6 +226,7 @@ export const EXTRA_OPTIONS = [
     price: 18500,
   },
   {
+    id: 6,
     option: "Колёса опорные",
     description:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Curabitur tempus urna at turpis condimentum lobortis.",
