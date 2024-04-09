@@ -52,7 +52,7 @@ export const UpgradeBasic = () => {
                     <h4>{option}</h4>
                     <p>{description}</p>
                   </TextContainer>
-                  <Button onClick={() => toggleOption(id)}>
+                  <Button onClick={() => toggleOption(id)} sub={isAdded}>
                     {isAdded ? "Добавлено" : "Добавить"}
                   </Button>
                   <Gallery>

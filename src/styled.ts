@@ -77,6 +77,10 @@ export const GlobalStyles = styled.createGlobalStyle`
     text-decoration: none;
     color: inherit;
     font-family: Montserrat-SemiBold;
+    transition: ${({ theme }) => theme.transition};
+    &:hover {
+      color: ${({ theme: { colors } }) => colors.main};
+    }
   }
   h2 {
     font-family: Montserrat-Bold;
@@ -118,5 +122,8 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
   .underline {
     text-decoration: underline;
+  }
+  .pointer {
+    cursor: pointer;
   }
 `;

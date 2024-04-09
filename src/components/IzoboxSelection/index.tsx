@@ -1,38 +1,33 @@
-import { useAppSelector } from "@hooks/typedHooks";
+import { Slider } from "@components/Slider";
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { Button } from "@shared/Button";
-import { selectIsWindow } from "@store/izobox/basicIzobox";
-import { Windows } from "@store/izobox/interfaces";
 
 import { BasicIzobox } from "./BasicIzobox";
 import { IzoboxTypeSelection } from "./IzoboxType";
-import { FlexGap, Gallery, IzoboxContainer, Properties } from "./styled";
+import { FlexGap, Gallery, IzoboxContainer, Properties, Type } from "./styled";
 
 export const IzoboxSelection = () => {
   const { izobox } = useIzobox();
-
-  const isWindow = useAppSelector(selectIsWindow);
-
   return (
     <div className="wrapper">
       <h3>
-        IzoBox <span className="primary-text">{izobox.type}</span>
+        IzoBox{" "}
+        <Type className="primary-text">
+          {izobox.type === IzoboxType.basicWithoutWindow
+            ? IzoboxType.basic
+            : izobox.type}
+        </Type>
       </h3>
       <IzoboxContainer>
         <Gallery>
-          <img
-            src={
-              izobox.type === IzoboxType.basic &&
-              Windows[isWindow] === Windows.without
-                ? izobox.photoWithoutWindow
-                : izobox.photo
-            }
-          />
+          <Slider sliderPhotos={izobox.sliderPhotos} />
+          <img src={izobox.photo} />
         </Gallery>
         <Properties>
           <IzoboxTypeSelection />
-          {izobox.type === IzoboxType.basic && <BasicIzobox />}
+          {(izobox.type === IzoboxType.basic ||
+            izobox.type === IzoboxType.basicWithoutWindow) && <BasicIzobox />}
 
           <FlexGap>
             <Button>Купить</Button>

@@ -17,6 +17,11 @@ export const Tab = styled(BigText)<{ $isChoosen: boolean }>`
   color: ${({ $isChoosen, theme: { colors } }) =>
     $isChoosen ? colors.dark : colors.sub};
   cursor: pointer;
+  transition: ${({ theme }) => theme.transition};
+  &:hover {
+    border-bottom: 3px solid ${({ theme: { colors } }) => colors.dark};
+    color: ${({ theme: { colors } }) => colors.dark};
+  }
 `;
 
 export const Photos = styled.div`

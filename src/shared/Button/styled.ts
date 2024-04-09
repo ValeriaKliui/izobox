@@ -36,4 +36,10 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   min-width: ${({ $choosen }) =>
     typeof $choosen !== "undefined" ? "inherit" : "200px"};
   cursor: pointer;
+  transition: ${({ theme }) => theme.transition};
+  &:hover {
+    background-color: ${({ theme: { colors } }) => colors.main};
+    color: ${({ theme: { colors } }) => colors.white};
+    border-color: transparent;
+  }
 `;

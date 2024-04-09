@@ -9,15 +9,21 @@ export const IzoboxTypeSelection = () => {
 
   return (
     <FlexGap>
-      {Object.values(IzoboxType).map((izoboxType) => (
-        <Button
-          choosen={izobox.type === izoboxType}
-          onClick={() => chooseIzobox(izoboxType)}
-          key={izoboxType}
-        >
-          {izoboxType}
-        </Button>
-      ))}
+      {Object.values(IzoboxType)
+        .filter((type) => type !== IzoboxType.basicWithoutWindow)
+        .map((izoboxType) => (
+          <Button
+            choosen={
+              izobox.type === IzoboxType.basicWithoutWindow
+                ? izoboxType === IzoboxType.basic
+                : izobox.type === izoboxType
+            }
+            onClick={() => chooseIzobox(izoboxType)}
+            key={izoboxType}
+          >
+            {izoboxType}
+          </Button>
+        ))}
     </FlexGap>
   );
 };

@@ -10,6 +10,10 @@ export const TitleContainer = styled.div`
 
 export const Arrow = styled(ArrowSvg)<{ $isShown: boolean }>`
   transform: ${({ $isShown }) => ($isShown ? "rotate(180deg)" : "unset")};
+  transition: ${({ theme }) => theme.transition};
+  &:hover {
+    transform: rotate(180deg);
+  }
 `;
 export const Options = styled.div`
   display: flex;

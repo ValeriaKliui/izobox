@@ -26,7 +26,7 @@ export const BasicIzobox = () => {
         title="Цвет снаружи"
         colorType={ColorType.outside}
       />
-      <p className="bold underline" onClick={onAllColorsClick}>
+      <p className="bold underline pointer" onClick={onAllColorsClick}>
         Все цвета
       </p>
       <TotalPrice />

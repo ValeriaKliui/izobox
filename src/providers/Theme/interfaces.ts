@@ -13,4 +13,5 @@ export interface BaseTheme {
     background: string;
   };
   radiuses: { small: string; big: string };
+  transition: string;
 }

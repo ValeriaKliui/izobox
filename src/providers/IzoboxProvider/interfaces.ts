@@ -1,14 +1,19 @@
+import {
+  ColorInside,
+  ColorOutside,
+} from "@components/IzoboxSelection/BasicIzobox/Colors/interfaces";
 import { ReactNode } from "react";
 
 export interface Izobox {
   descriptionText: string;
   photo: string;
+  sliderPhotos: string[];
   galleryPhotos: string[];
   price: number;
   type: IzoboxType;
   colorsInside: string[];
   colorsOutside: string[];
-  allColors?: string[];
+  allColors?: (ColorInside | ColorOutside)[];
   videos: string[];
   photoWithoutWindow?: string;
   windows?: { with: string; without: string };
@@ -19,6 +24,7 @@ export interface Izobox {
 }
 export enum IzoboxType {
   basic = "basic",
+  basicWithoutWindow = "basicWithoutWindow",
   pro = "pro",
 }
 export interface IzoboxContextType {

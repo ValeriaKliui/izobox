@@ -1,4 +1,4 @@
 export enum ColorType {
-  inside,
-  outside,
+  inside = "Внутри",
+  outside = "Снаружи",
 }

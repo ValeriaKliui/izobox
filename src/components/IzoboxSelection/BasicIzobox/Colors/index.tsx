@@ -25,6 +25,18 @@ export const Colors: FC<ColorsProps> = ({ colors, title, colorType }) => {
     else dispatch(chooseColorOutside(color as ColorOutside));
   };
 
+  if (
+    colorType === ColorType.inside &&
+    !colors.find((color) => color === colorInside)
+  )
+    colors.push(colorInside);
+
+  if (
+    colorType === ColorType.outside &&
+    !colors.find((color) => color === colorOutside)
+  )
+    colors.push(colorOutside);
+
   return (
     <Container>
       <p className="semibold">{title}</p>

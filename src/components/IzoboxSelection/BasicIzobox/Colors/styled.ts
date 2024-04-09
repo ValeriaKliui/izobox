@@ -6,7 +6,8 @@ export const Container = styled.div`
   gap: 0.5em;
 `;
 export const ColorsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 40px);
   gap: 0.5em;
 `;
 export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
@@ -19,4 +20,5 @@ export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
     ${({ $isChoosen, theme: { colors } }) =>
       $isChoosen ? colors.main : "unset"};
   outline-offset: 2px;
+  box-shadow: 0 1px 5px 0 rgba(0, 53, 133, 0.25);
 `;
