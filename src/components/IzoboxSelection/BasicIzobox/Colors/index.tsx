@@ -1,4 +1,4 @@
-import { ColorType } from "@components/ColorModal/interfaces";
+import { ColorType } from "@components/Modals/ColorModal/interfaces";
 import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
 import {
   chooseColorInside,

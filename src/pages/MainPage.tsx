@@ -1,4 +1,3 @@
-import { ColorModal } from "@components/ColorModal";
 import { Description } from "@components/Description";
 import { IzoboxSelection } from "@components/IzoboxSelection";
 import { MainScreen } from "@components/MainScreen";
@@ -17,7 +16,6 @@ export const MainPage = () => {
       <IzoboxSelection />
       <Description />
       {izobox.type === IzoboxType.basic && <UpgradeBasic />}
-      <ColorModal />
     </>
   );
 };

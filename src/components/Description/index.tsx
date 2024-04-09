@@ -1,4 +1,7 @@
+import { Modal } from "@components/Modals";
+import { PhotoModal } from "@components/Modals/PhotoModal";
 import { useIzobox } from "@hooks/useIzobox";
+import { usePhotoModal } from "@hooks/usePhotoModal";
 import { MediumText } from "@shared/Typography/Typography";
 import { FC, useState } from "react";
 
@@ -10,6 +13,7 @@ export const Description: FC = () => {
 
   const chooseTab = (tab: TABS) => () => setChoosenTab(tab);
   const { izobox } = useIzobox();
+  const { onPhotoClick, onPhotoClose, isModalOpened } = usePhotoModal();
 
   return (
     <Container className="wrapper">
@@ -33,8 +37,8 @@ export const Description: FC = () => {
       )}
       {choosenTab === TABS.photo && (
         <Photos>
-          {izobox.galleryPhotos.map((src) => (
-            <img src={src} key={src} />
+          {izobox.galleryPhotos.map((src, index) => (
+            <img src={src} key={src} onClick={() => onPhotoClick(index)} />
           ))}
         </Photos>
       )}
@@ -50,6 +54,9 @@ export const Description: FC = () => {
           ))}
         </Videos>
       )}
+      <Modal isOpened={isModalOpened} onClose={onPhotoClose}>
+        <PhotoModal photosSrc={izobox.galleryPhotos} />
+      </Modal>
     </Container>
   );
 };

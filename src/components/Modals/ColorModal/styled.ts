@@ -1,21 +1,5 @@
-import CrossSvg from "@assets/icons/cross.svg?react";
 import styled from "styled-components";
 
-export const Shadow = styled.div<{ $isOpened: boolean }>`
-  width: ${({ $isOpened }) => ($isOpened ? "100%" : 0)};
-  height: ${({ $isOpened }) => ($isOpened ? "100vh" : 0)};
-  background: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  top: ${({ $isOpened }) => ($isOpened ? 0 : "-100%")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const Container = styled.div`
-  background: ${({ theme: { colors } }) => colors.white};
-  padding: 1em;
-  border-radius: ${({ theme: { radiuses } }) => radiuses.small};
-`;
 export const Colors = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -58,8 +42,6 @@ export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
 `;
 export const Top = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
-export const Cross = styled(CrossSvg)`
-  cursor: pointer;
+  flex-direction: column;
+  gap: 1em;
 `;

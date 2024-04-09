@@ -1,4 +1,4 @@
-import { ColorType } from "@components/ColorModal/interfaces";
+import { ColorType } from "@components/Modals/ColorModal/interfaces";
 import { useAppDispatch } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
 import { openColorModal } from "@store/app/appSlice";
