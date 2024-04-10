@@ -1,11 +1,11 @@
-import { ColorType } from "@components/Modals/ColorModal/interfaces";
 import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
+import { ColorType } from "@shared/Modals/ColorModal/interfaces";
 import {
   chooseColorInside,
   chooseColorOutside,
   selectColorInside,
   selectColorOutside,
-} from "@store/izobox/basicIzobox";
+} from "@store/izobox/izoboxSlice";
 import { FC } from "react";
 
 import { ColorInside, ColorOutside, ColorsProps } from "./interfaces";
@@ -27,13 +27,15 @@ export const Colors: FC<ColorsProps> = ({ colors, title, colorType }) => {
 
   if (
     colorType === ColorType.inside &&
-    !colors.find((color) => color === colorInside)
+    !colors.find((color) => color === colorInside) &&
+    colorInside !== null
   )
     colors.push(colorInside);
 
   if (
     colorType === ColorType.outside &&
-    !colors.find((color) => color === colorOutside)
+    !colors.find((color) => color === colorOutside) &&
+    colorOutside !== null
   )
     colors.push(colorOutside);
 

@@ -1,11 +1,19 @@
+import { useAppDispatch } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { Button } from "@shared/Button";
+import { resetColorsChoosen } from "@store/izobox/izoboxSlice";
 
 import { FlexGap } from "../styled";
 
 export const IzoboxTypeSelection = () => {
   const { izobox, chooseIzobox } = useIzobox();
+  const dispatch = useAppDispatch();
+
+  const onButtonClick = (izoboxType: IzoboxType) => {
+    chooseIzobox(izoboxType);
+    dispatch(resetColorsChoosen());
+  };
 
   return (
     <FlexGap>
@@ -18,7 +26,7 @@ export const IzoboxTypeSelection = () => {
                 ? izoboxType === IzoboxType.basic
                 : izobox.type === izoboxType
             }
-            onClick={() => chooseIzobox(izoboxType)}
+            onClick={() => onButtonClick(izoboxType)}
             key={izoboxType}
           >
             {izoboxType}

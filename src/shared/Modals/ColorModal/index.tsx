@@ -10,7 +10,7 @@ import {
   chooseColorOutside,
   selectColorInside,
   selectColorOutside,
-} from "@store/izobox/basicIzobox";
+} from "@store/izobox/izoboxSlice";
 import { useState } from "react";
 
 import { ColorType } from "./interfaces";

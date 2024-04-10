@@ -1,6 +1,6 @@
-import { Modal } from "@components/Modals";
-import { PhotoModal } from "@components/Modals/PhotoModal";
-import { usePhotoModal } from "@hooks/usePhotoModal";
+import { useContentModal } from "@hooks/useContentModal";
+import { Modal } from "@shared/Modals";
+import { ContentModal } from "@shared/Modals/ContentModal";
 import { FC, useEffect, useRef, useState } from "react";
 
 import { SliderProps } from "./interfaces";
@@ -24,7 +24,8 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
   const showedPhotosAmount = 4;
   const gap = 10;
 
-  const { onPhotoClick, onPhotoClose, isModalOpened } = usePhotoModal();
+  const { onContentClick, onContentClose, isModalOpened } =
+    useContentModal(sliderPhotos);
 
   const showNext = () => {
     setScrollHeight((prev) => {
@@ -71,15 +72,15 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
                 src={src}
                 key={src}
                 ref={photoRef}
-                onClick={() => onPhotoClick(index)}
+                onClick={() => onContentClick(index)}
               />
             ))}
           </Photos>
         </Container>
         <SecondArrow onClick={showNext} $disabled={isArrowDisabled.second} />
       </Wrapper>
-      <Modal isOpened={isModalOpened} onClose={onPhotoClose}>
-        <PhotoModal photosSrc={sliderPhotos} />
+      <Modal isOpened={isModalOpened} onClose={onContentClose}>
+        <ContentModal contentSrc={sliderPhotos} />
       </Modal>
     </>
   );

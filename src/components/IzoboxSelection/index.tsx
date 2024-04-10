@@ -1,15 +1,15 @@
-import { Modal } from "@components/Modals";
-import { ColorModal } from "@components/Modals/ColorModal";
 import { Slider } from "@components/Slider";
 import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
-import { Button } from "@shared/Button";
+import { Modal } from "@shared/Modals";
+import { ColorModal } from "@shared/Modals/ColorModal";
 import { closeColorModal, selectIsColorModalOpened } from "@store/app/appSlice";
 
 import { BasicIzobox } from "./BasicIzobox";
 import { IzoboxTypeSelection } from "./IzoboxType";
-import { FlexGap, Gallery, IzoboxContainer, Properties, Type } from "./styled";
+import { ProIzobox } from "./ProIzobox";
+import { Gallery, IzoboxContainer, Properties, Type } from "./styled";
 
 export const IzoboxSelection = () => {
   const { izobox } = useIzobox();
@@ -40,11 +40,7 @@ export const IzoboxSelection = () => {
             <IzoboxTypeSelection />
             {(izobox.type === IzoboxType.basic ||
               izobox.type === IzoboxType.basicWithoutWindow) && <BasicIzobox />}
-
-            <FlexGap>
-              <Button>Купить</Button>
-              <Button sub>В кредит</Button>
-            </FlexGap>
+            {izobox.type === IzoboxType.pro && <ProIzobox />}
           </Properties>
         </IzoboxContainer>
       </div>

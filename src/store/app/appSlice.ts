@@ -4,16 +4,16 @@ import { RootState } from "..";
 
 interface AppState {
   isColorModalOpened: boolean;
-  isPhotoModalOpened: boolean;
-  clickedPhotoIndex: number;
+  isContentModalOpened: boolean;
+  clickedContentIndex: number;
 }
 
 export const appSlice = createSlice({
   name: "app",
   initialState: <AppState>{
     isColorModalOpened: false,
-    isPhotoModalOpened: false,
-    clickedPhotoIndex: 0,
+    isContentModalOpened: false,
+    clickedContentIndex: 0,
   },
   reducers: {
     openColorModal: (state) => {
@@ -22,14 +22,14 @@ export const appSlice = createSlice({
     closeColorModal: (state) => {
       state.isColorModalOpened = false;
     },
-    openPhotoModal: (state) => {
-      state.isPhotoModalOpened = true;
+    openContentModal: (state) => {
+      state.isContentModalOpened = true;
     },
-    closePhotoModal: (state) => {
-      state.isPhotoModalOpened = false;
+    closeContentModal: (state) => {
+      state.isContentModalOpened = false;
     },
-    choosePhotoIndex: (state, action: PayloadAction<number>) => {
-      state.clickedPhotoIndex = action.payload;
+    chooseContentIndex: (state, action: PayloadAction<number>) => {
+      state.clickedContentIndex = action.payload;
     },
   },
 });
@@ -37,16 +37,16 @@ export const appSlice = createSlice({
 export const {
   openColorModal,
   closeColorModal,
-  openPhotoModal,
-  closePhotoModal,
-  choosePhotoIndex,
+  openContentModal,
+  closeContentModal,
+  chooseContentIndex,
 } = appSlice.actions;
 
 export const selectIsColorModalOpened = (state: RootState) =>
   state.app.isColorModalOpened;
-export const selectIsPhotoModalOpened = (state: RootState) =>
-  state.app.isPhotoModalOpened;
-export const selectPhotoIndexClicked = (state: RootState) =>
-  state.app.clickedPhotoIndex;
+export const selectIsContentModalOpened = (state: RootState) =>
+  state.app.isContentModalOpened;
+export const selectContentIndexClicked = (state: RootState) =>
+  state.app.clickedContentIndex;
 
 export default appSlice.reducer;

@@ -5,8 +5,15 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 `;
+export const ImgContainer = styled.div`
+  height: 600px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const Img = styled.img`
-  min-height: 300px;
+  width: 100%;
 `;
 export const LeftArrow = styled(ArrowSvg)`
   transform: rotate(90deg);

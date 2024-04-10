@@ -29,7 +29,6 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   border: none;
   color: ${({ $choosen, $sub }) => defineButtonColor({ $choosen, $sub })};
   border-radius: ${({ theme }) => theme.radiuses.big};
-  text-transform: capitalize;
   border: 2px solid
     ${({ $sub, theme: { colors } }) => ($sub ? colors.dark : "inherit")};
   width: fit-content;

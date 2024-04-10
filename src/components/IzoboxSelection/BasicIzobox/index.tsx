@@ -1,9 +1,11 @@
-import { ColorType } from "@components/Modals/ColorModal/interfaces";
 import { useAppDispatch } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
+import { Button } from "@shared/Button";
+import { Colors } from "@shared/Colors";
+import { ColorType } from "@shared/Modals/ColorModal/interfaces";
 import { openColorModal } from "@store/app/appSlice";
 
-import { Colors } from "./Colors";
+import { FlexGap } from "../styled";
 import { TotalPrice } from "./TotalPrice";
 import { WindowsSelection } from "./WindowsSelection";
 
@@ -30,6 +32,10 @@ export const BasicIzobox = () => {
         Все цвета
       </p>
       <TotalPrice />
+      <FlexGap>
+        <Button>Купить</Button>
+        <Button sub>В кредит</Button>
+      </FlexGap>
     </>
   );
 };

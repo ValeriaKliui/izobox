@@ -21,6 +21,7 @@ export interface Izobox {
   equipment?: string[];
   features?: string[];
   extraDescriptionComponent?: ReactNode;
+  options?: string[];
 }
 export enum IzoboxType {
   basic = "basic",

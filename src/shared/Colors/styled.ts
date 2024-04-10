@@ -13,7 +13,7 @@ export const ColorsContainer = styled.div`
 export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
   width: 40px;
   height: 40px;
-  background-color: ${({ $color }) => $color};
+  background: ${({ $color }) => $color};
   cursor: pointer;
   border-radius: ${({ theme: { radiuses } }) => radiuses.small};
   outline: 2px solid

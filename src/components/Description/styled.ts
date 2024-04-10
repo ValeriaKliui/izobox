@@ -26,8 +26,18 @@ export const Tab = styled(BigText)<{ $isChoosen: boolean }>`
 
 export const Photos = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, minmax(240px, 1fr));
   gap: 1em;
+`;
+export const PhotoContainer = styled.div`
+  width: 240px;
+  height: 240px;
+`;
+export const Photo = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 `;
 export const Videos = styled.div`
   display: grid;

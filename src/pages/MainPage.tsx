@@ -1,3 +1,4 @@
+import { Customization } from "@components/Customization";
 import { Description } from "@components/Description";
 import { IzoboxSelection } from "@components/IzoboxSelection";
 import { MainScreen } from "@components/MainScreen";
@@ -16,6 +17,7 @@ export const MainPage = () => {
       <IzoboxSelection />
       <Description />
       {izobox.type === IzoboxType.basic && <UpgradeBasic />}
+      {izobox.type === IzoboxType.pro && <Customization />}
     </>
   );
 };

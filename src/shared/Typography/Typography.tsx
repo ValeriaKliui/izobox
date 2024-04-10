@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const BiggestText = styled.p`
+  font-size: 2.5em;
+`;
 export const BigText = styled.p`
   font-size: 1.25em;
   line-height: 120%;

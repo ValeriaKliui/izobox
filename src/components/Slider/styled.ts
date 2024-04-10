@@ -33,4 +33,9 @@ export const Photos = styled.div<{ $gap: number; $scrollHeight: number }>`
 export const Photo = styled.img`
   width: 70px;
   height: 70px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  &:hover {
+    border-color: ${({ theme: { colors } }) => colors.main};
+  }
 `;

@@ -6,11 +6,11 @@ import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 
 export interface IzoboxState {
   type: IzoboxType;
+  colorInside: ColorInside;
+  colorOutside: ColorOutside;
 }
 export interface BasicIzoboxState {
   window: Windows;
-  colorInside: ColorInside;
-  colorOutside: ColorOutside;
   extraOptions: number[];
 }
 export enum Windows {

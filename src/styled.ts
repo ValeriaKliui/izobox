@@ -59,6 +59,13 @@ export const GlobalStyles = styled.createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+  input,
+  input::placeholder,
+  textarea {
+    font-size: 16px;
+    font-family: Montserrat;
+    color: ${({ theme: { colors } }) => colors.sub};
+  }
   button {
     font-size: 16px;
     font-family: Montserrat-SemiBold;
