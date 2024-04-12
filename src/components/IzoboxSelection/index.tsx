@@ -1,4 +1,5 @@
 import { Slider } from "@components/Slider";
+import { ANCHORS } from "@constants/paths";
 import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
@@ -22,7 +23,7 @@ export const IzoboxSelection = () => {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" id={ANCHORS.custom}>
         <h3>
           IzoBox{" "}
           <Type className="primary-text">

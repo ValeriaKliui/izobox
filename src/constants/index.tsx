@@ -33,6 +33,7 @@ import Wheels from "@assets/img/wheels.png";
 import Wheel from "@assets/img/whell.png";
 import BasicWithoutWindow from "@assets/img/without-window.png";
 import { BasicDescription } from "@components/BasicDesciption";
+import { CUSTOM_ITEM } from "@components/Customization/PropertiesForm/interfaces";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 
 export const NAV_LINKS = [
@@ -314,5 +315,146 @@ export const EXTRA_OPTIONS = [
     photo: Wheel,
     galleryPhotos: [InsideAngle, Inside, Gallery],
     price: 18500,
+  },
+];
+
+export const WINDOWS: CUSTOM_ITEM[] = [
+  {
+    title: "Окно сзади",
+    dimensions: [
+      { name: "X", initValue: 138 },
+      { name: "Y", initValue: 800 },
+      { name: "Ширина", initValue: 750 },
+      { name: "Высота", initValue: 800 },
+    ],
+  },
+  {
+    title: "Окно спереди",
+    dimensions: [
+      { name: "X", initValue: 138 },
+      { name: "Y", initValue: 800 },
+      { name: "Ширина", initValue: 750 },
+      { name: "Высота", initValue: 800 },
+    ],
+  },
+  {
+    title: "Окно справа",
+    dimensions: [
+      { name: "X", initValue: 138 },
+      { name: "Y", initValue: 800 },
+      { name: "Ширина", initValue: 750 },
+      { name: "Высота", initValue: 800 },
+    ],
+  },
+  {
+    title: "Окно слева",
+    dimensions: [
+      { name: "X", initValue: 138 },
+      { name: "Y", initValue: 800 },
+      { name: "Ширина", initValue: 750 },
+      { name: "Высота", initValue: 800 },
+    ],
+  },
+  {
+    title: "Окно в двери",
+    dimensions: [
+      { name: "X", initValue: 138 },
+      { name: "Y", initValue: 800 },
+      { name: "Ширина", initValue: 750 },
+      { name: "Высота", initValue: 800 },
+    ],
+  },
+];
+
+export const WALLS: CUSTOM_ITEM[] = [
+  {
+    title: "Размеры снаружи",
+    dimensions: [
+      { name: "Ширина", initValue: 1146 },
+      { name: "Глубина", initValue: 1146 },
+      { name: "Высота", initValue: 2194 },
+    ],
+  },
+  {
+    title: "Размеры внутри",
+    dimensions: [
+      { name: "Ширина", initValue: 1010 },
+      { name: "Глубина", initValue: 1010 },
+      { name: "Высота", initValue: 2090 },
+    ],
+  },
+];
+
+export const CABLES: CUSTOM_ITEM[] = [
+  {
+    title: "Кабель сзади",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Кабель спереди",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Кабель справа",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Кабель слева",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+];
+
+export const DOORS: CUSTOM_ITEM[] = [
+  {
+    dimensions: [
+      { name: "X", initValue: 200 },
+      { name: "Y", initValue: 118 },
+      { name: "Ширина", initValue: 1010 },
+      { name: "Высота", initValue: 1010 },
+    ],
+    pickers: [{ title: "Петли", values: ["Слева", "Справа"] }],
+  },
+];
+
+export const HOODS: CUSTOM_ITEM[] = [
+  {
+    title: "Вытяжка сзади",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Вытяжка спереди",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Вытяжка справа",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
+  },
+  {
+    title: "Вытяжка слева",
+    dimensions: [
+      { name: "X", initValue: 990 },
+      { name: "Y", initValue: 120 },
+    ],
   },
 ];

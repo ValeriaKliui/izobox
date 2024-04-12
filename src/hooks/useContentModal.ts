@@ -1,5 +1,6 @@
 import {
   chooseContentIndex,
+  chooseContentSrc,
   closeContentModal,
   openContentModal,
   selectIsContentModalOpened,
@@ -11,12 +12,14 @@ export const useContentModal = () => {
   const dispatch = useAppDispatch();
   const isModalOpened = useAppSelector(selectIsContentModalOpened);
 
-  const onContentClick = (index: number) => {
+  const onContentClick = (index: number, contentSrc: string[]) => {
+    dispatch(chooseContentSrc(contentSrc));
     dispatch(chooseContentIndex(index));
     dispatch(openContentModal());
   };
 
   const onContentClose = () => {
+    dispatch(chooseContentSrc([]));
     dispatch(closeContentModal());
     dispatch(chooseContentIndex(0));
   };

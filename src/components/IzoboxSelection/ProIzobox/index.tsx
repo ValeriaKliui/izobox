@@ -2,10 +2,8 @@ import { StyledLi } from "@components/BasicDesciption/styled";
 import { IZOBOXES } from "@constants/index";
 import { BigText } from "@shared/Typography/Typography";
 
-import { Container } from "./styled";
-
 export const ProIzobox = () => (
-  <Container>
+  <div className="flex-col-gap">
     <BigText className="semibold">
       <span>Создай студию своей мечты вместе с </span>
       <span className="bold">IzoBox™</span>
@@ -17,5 +15,5 @@ export const ProIzobox = () => (
         </StyledLi>
       ))}
     </ul>
-  </Container>
+  </div>
 );

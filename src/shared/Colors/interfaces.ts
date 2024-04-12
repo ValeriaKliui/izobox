@@ -1,5 +1,5 @@
-import { ColorType } from "@components/Modal/ColorModal/interfaces";
 import { IZOBOXES } from "@constants/index";
+import { ColorType } from "@shared/Modals/ColorModal/interfaces";
 
 export interface ColorsProps {
   colors: string[];

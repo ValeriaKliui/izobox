@@ -1,11 +1,6 @@
 import { BigText } from "@shared/Typography/Typography";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-`;
 export const Tabs = styled.div`
   display: flex;
   gap: 1em;

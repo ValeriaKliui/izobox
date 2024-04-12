@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-`;
 export const StagesContainer = styled.div`
   display: flex;
   align-items: center;
@@ -26,5 +21,5 @@ export const Controls = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8em;
+  gap: 6em;
 `;

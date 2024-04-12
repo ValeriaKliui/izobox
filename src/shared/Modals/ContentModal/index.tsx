@@ -2,13 +2,13 @@ import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
 import {
   chooseContentIndex,
   selectContentIndexClicked,
+  selectContentSrc,
 } from "@store/app/appSlice";
-import { FC } from "react";
 
-import { ContentModalProps } from "./interfaces";
 import { Container, Img, ImgContainer, LeftArrow, RightArrow } from "./styled";
 
-export const ContentModal: FC<ContentModalProps> = ({ contentSrc }) => {
+export const ContentModal = () => {
+  const contentSrc = useAppSelector(selectContentSrc);
   const contentIndex = useAppSelector(selectContentIndexClicked);
   const dispatch = useAppDispatch();
 

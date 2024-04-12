@@ -40,8 +40,7 @@ export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
   outline-offset: 2px;
   box-shadow: 0 1px 5px 0 rgba(0, 53, 133, 0.25);
 `;
-export const Top = styled.div`
+export const RadioContainer = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 1em;
 `;

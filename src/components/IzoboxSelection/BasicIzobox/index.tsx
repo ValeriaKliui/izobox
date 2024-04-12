@@ -1,9 +1,11 @@
+import { PATHS } from "@constants/paths";
 import { useAppDispatch } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
 import { Button } from "@shared/Button";
 import { Colors } from "@shared/Colors";
 import { ColorType } from "@shared/Modals/ColorModal/interfaces";
 import { openColorModal } from "@store/app/appSlice";
+import { Link } from "react-router-dom";
 
 import { FlexGap } from "../styled";
 import { TotalPrice } from "./TotalPrice";
@@ -33,7 +35,9 @@ export const BasicIzobox = () => {
       </p>
       <TotalPrice />
       <FlexGap>
-        <Button>Купить</Button>
+        <Link to={PATHS.ORDER}>
+          <Button>Купить</Button>
+        </Link>
         <Button sub>В кредит</Button>
       </FlexGap>
     </>

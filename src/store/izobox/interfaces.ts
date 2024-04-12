@@ -1,13 +1,10 @@
-import {
-  ColorInside,
-  ColorOutside,
-} from "@components/IzoboxSelection/BasicIzobox/Colors/interfaces";
 import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
+import { ColorInside, ColorOutside } from "@shared/Colors/interfaces";
 
 export interface IzoboxState {
   type: IzoboxType;
-  colorInside: ColorInside;
-  colorOutside: ColorOutside;
+  colorInside: ColorInside | null;
+  colorOutside: ColorOutside | null;
 }
 export interface BasicIzoboxState {
   window: Windows;

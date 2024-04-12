@@ -15,7 +15,6 @@ import {
   GalleryPhoto,
   Option,
   Options,
-  TextContainer,
   TitleContainer,
 } from "./styled";
 
@@ -48,10 +47,10 @@ export const UpgradeBasic = () => {
               return (
                 <Option key={id}>
                   <img src={photo} />
-                  <TextContainer>
+                  <div className="flex-col-gap">
                     <h4>{option}</h4>
                     <p>{description}</p>
-                  </TextContainer>
+                  </div>
                   <Button onClick={() => toggleOption(id)} sub={isAdded}>
                     {isAdded ? "Добавлено" : "Добавить"}
                   </Button>

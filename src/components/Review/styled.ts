@@ -11,9 +11,6 @@ export const Container = styled.div`
   align-items: center;
 `;
 export const ReviewContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
   position: relative;
   &::before {
     content: url(${quoteImg});

@@ -14,9 +14,6 @@ export const FirstArrow = styled(SecondArrow)<{ $disabled: boolean }>`
   transform: rotate(180deg);
 `;
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
   align-items: center;
 `;
 export const Container = styled.div<{ $height: number }>`

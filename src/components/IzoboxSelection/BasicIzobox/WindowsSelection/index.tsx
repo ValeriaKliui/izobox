@@ -4,6 +4,8 @@ import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { Windows } from "@store/izobox/interfaces";
 import { chooseIzobox } from "@store/izobox/izoboxSlice";
 
+import { Container } from "./styled";
+
 export const WindowsSelection = () => {
   const windows = Object.entries(Windows).map((window) => ({
     value: window[0],
@@ -15,5 +17,9 @@ export const WindowsSelection = () => {
       ? dispatch(chooseIzobox(IzoboxType.basic))
       : dispatch(chooseIzobox(IzoboxType.basicWithoutWindow));
 
-  return <RadioButtons values={windows} handleChange={handleWindowChange} />;
+  return (
+    <Container>
+      <RadioButtons values={windows} handleChange={handleWindowChange} />
+    </Container>
+  );
 };

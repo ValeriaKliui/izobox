@@ -1,7 +1,4 @@
-import {
-  ColorInside,
-  ColorOutside,
-} from "@components/IzoboxSelection/BasicIzobox/Colors/interfaces";
+import { ColorInside, ColorOutside } from "@shared/Colors/interfaces";
 import { ReactNode } from "react";
 
 export interface Izobox {

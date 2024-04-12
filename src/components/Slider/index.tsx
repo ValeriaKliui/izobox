@@ -24,8 +24,7 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
   const showedPhotosAmount = 4;
   const gap = 10;
 
-  const { onContentClick, onContentClose, isModalOpened } =
-    useContentModal(sliderPhotos);
+  const { onContentClick, onContentClose, isModalOpened } = useContentModal();
 
   const showNext = () => {
     setScrollHeight((prev) => {
@@ -61,7 +60,7 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="flex-col-gap">
         <FirstArrow onClick={showPrev} $disabled={isArrowDisabled.first} />
         <Container
           $height={elemHeight && showedPhotosAmount * (elemHeight + gap)}
@@ -72,7 +71,7 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
                 src={src}
                 key={src}
                 ref={photoRef}
-                onClick={() => onContentClick(index)}
+                onClick={() => onContentClick(index, sliderPhotos)}
               />
             ))}
           </Photos>

@@ -39,8 +39,3 @@ export const Gallery = styled.div`
 export const GalleryPhoto = styled.img`
   max-width: 40px;
 `;
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-`;

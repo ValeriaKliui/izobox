@@ -7,4 +7,5 @@ export const Container = styled.div`
 export const ColorsContainer = styled.div`
   display: flex;
   gap: 5em;
+  margin-bottom: 1em;
 `;

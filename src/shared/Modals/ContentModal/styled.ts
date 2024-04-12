@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1000;
 `;
 export const ImgContainer = styled.div`
   height: 600px;

@@ -18,7 +18,7 @@ export const Review = () => (
       {REVIEWS.map(({ review, avatarSrc, job, name }, index) => (
         <Fragment key={index}>
           {index === 1 && <Image src={GirlImg} />}
-          <ReviewContainer>
+          <ReviewContainer className="flex-col-gap">
             <SmallText>{review}</SmallText>
             <Author>
               <Avatar src={avatarSrc} />

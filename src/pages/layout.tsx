@@ -4,16 +4,18 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 const FlexWrapper = styled.div`
-    display:flex;
-    flex-direction:column;
-    gap: 4em
-`
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  flex-basis: 100%;
+`;
 
 export const PageLayout = () => (
-    <>
-        <Header />
-        <FlexWrapper>
-            <Outlet /></FlexWrapper>
-        <Footer />
-    </>
+  <>
+    <Header />
+    <FlexWrapper>
+      <Outlet />
+    </FlexWrapper>
+    <Footer />
+  </>
 );

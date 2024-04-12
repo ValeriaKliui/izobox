@@ -24,14 +24,6 @@ export const AboutContainer = styled.div`
 `;
 export const TextAbout = styled.div`
   flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-`;
-export const GalleryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
 `;
 export const Gallery = styled.div`
   display: flex;

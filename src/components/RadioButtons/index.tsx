@@ -1,11 +1,12 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, Fragment, useState } from "react";
 
 import { RadioButtonsProps } from "./interfaces";
-import { Container, Label } from "./styled";
+import { Label } from "./styled";
 
 export const RadioButtons: FC<RadioButtonsProps> = ({
   values,
   handleChange = () => {},
+  classNameForActive,
 }) => {
   const [radioValue, setRadioValue] = useState(values[0].value);
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,19 +14,25 @@ export const RadioButtons: FC<RadioButtonsProps> = ({
     setRadioValue(e.target.value);
   };
 
+  const isChecked = (value: string) => value === radioValue;
+
   return (
-    <Container>
+    <>
       {values.map(({ text, value }) => (
-        <Label key={value}>
-          <input
-            value={value}
-            checked={radioValue === value}
-            onChange={onChange}
-            type="radio"
-          />
-          <p> {text}</p>
-        </Label>
+        <Fragment key={value}>
+          {text && (
+            <Label className={isChecked(value) ? classNameForActive : ""}>
+              <input
+                value={value}
+                checked={isChecked(value)}
+                onChange={onChange}
+                type="radio"
+              />
+              <p> {text}</p>
+            </Label>
+          )}
+        </Fragment>
       ))}
-    </Container>
+    </>
   );
 };

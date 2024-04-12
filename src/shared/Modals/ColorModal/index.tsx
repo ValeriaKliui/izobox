@@ -1,10 +1,7 @@
-import {
-  ColorInside,
-  ColorOutside,
-} from "@components/IzoboxSelection/BasicIzobox/Colors/interfaces";
 import { RadioButtons } from "@components/RadioButtons";
 import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
 import { useIzobox } from "@hooks/useIzobox";
+import { ColorInside, ColorOutside } from "@shared/Colors/interfaces";
 import {
   chooseColorInside,
   chooseColorOutside,
@@ -14,7 +11,7 @@ import {
 import { useState } from "react";
 
 import { ColorType } from "./interfaces";
-import { Color, Colors, Top } from "./styled";
+import { Color, Colors, RadioContainer } from "./styled";
 
 export const ColorModal = () => {
   const dispatch = useAppDispatch();
@@ -40,16 +37,18 @@ export const ColorModal = () => {
 
   return (
     <>
-      <Top>
+      <div className="flex-col-gap">
         <p className="bold">Выберите тип</p>
-        <RadioButtons
-          values={[
-            { value: ColorType.inside, text: "Цвет внутри" },
-            { value: ColorType.outside, text: "Цвет снаружи" },
-          ]}
-          handleChange={handleChange}
-        />
-      </Top>
+        <RadioContainer>
+          <RadioButtons
+            values={[
+              { value: ColorType.inside, text: "Цвет внутри" },
+              { value: ColorType.outside, text: "Цвет снаружи" },
+            ]}
+            handleChange={handleChange}
+          />
+        </RadioContainer>
+      </div>
       <Colors>
         {allColors?.map((color: ColorInside | ColorOutside) => (
           <Color

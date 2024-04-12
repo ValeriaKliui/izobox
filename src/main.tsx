@@ -1,3 +1,4 @@
+import { PATHS } from "@constants/paths";
 import { IzoboxProvider } from "@providers/IzoboxProvider";
 import { Theme } from "@providers/Theme/index";
 import { store } from "@store/index";
@@ -8,16 +9,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { PageLayout } from "./pages/layout";
 import { MainPage } from "./pages/MainPage";
+import { OrderPage } from "./pages/OrderPage";
 import { PoliticsPage } from "./pages/PoliticsPage";
 import { GlobalStyles } from "./styled";
 
 const router = createBrowserRouter([
   {
     element: <PageLayout />,
-    path: "/",
+    path: PATHS.MAIN,
     children: [
       { element: <MainPage />, index: true },
       { element: <PoliticsPage />, path: "politics" },
+      {
+        path: PATHS.ORDER,
+        element: <OrderPage />,
+      },
     ],
   },
 ]);

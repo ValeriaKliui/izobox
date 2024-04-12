@@ -60,12 +60,14 @@ export const GlobalStyles = styled.createGlobalStyle`
     flex-direction: column;
   }
   input,
-  input::placeholder,
   textarea {
     font-size: 16px;
     font-family: Montserrat;
-    color: ${({ theme: { colors } }) => colors.sub};
+    &::placeholder {
+      color: ${({ theme: { colors } }) => colors.sub};
+    }
   }
+
   button {
     font-size: 16px;
     font-family: Montserrat-SemiBold;
@@ -132,5 +134,13 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
   .pointer {
     cursor: pointer;
+  }
+  .flex-col-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .sub-color {
+    color: ${({ theme: { colors } }) => colors.sub};
   }
 `;

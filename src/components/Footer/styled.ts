@@ -4,7 +4,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 2em;
-  margin-top: auto;
+  margin-top: auto !important;
   padding: 2em 0;
 `;
 export const LinksList = styled.ul`

@@ -5,7 +5,6 @@ import { FC, useState } from "react";
 
 import { TABS } from "./interfaces";
 import {
-  Container,
   Iframe,
   Photo,
   PhotoContainer,
@@ -26,7 +25,7 @@ export const Description: FC = () => {
   const { onContentClick } = useContentModal();
 
   return (
-    <Container className="wrapper">
+    <div className="wrapper flex-col-gap">
       <Tabs>
         {Object.values(TABS).map((tab) => (
           <Tab
@@ -52,7 +51,7 @@ export const Description: FC = () => {
               <Photo
                 src={src}
                 key={src}
-                onClick={() => onContentClick(index)}
+                onClick={() => onContentClick(index, galleryPhotos)}
               />
             </PhotoContainer>
           ))}
@@ -71,6 +70,6 @@ export const Description: FC = () => {
           ))}
         </Videos>
       )}
-    </Container>
+    </div>
   );
 };
