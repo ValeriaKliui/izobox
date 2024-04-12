@@ -14,6 +14,7 @@ import { Gallery, IzoboxContainer, Properties, Type } from "./styled";
 
 export const IzoboxSelection = () => {
   const { izobox } = useIzobox();
+  const { type, sliderPhotos, photo } = izobox;
 
   const dispatch = useAppDispatch();
   const isModalOpened = useAppSelector(selectIsColorModalOpened);
@@ -27,21 +28,19 @@ export const IzoboxSelection = () => {
         <h3>
           IzoBox{" "}
           <Type className="primary-text">
-            {izobox.type === IzoboxType.basicWithoutWindow
-              ? IzoboxType.basic
-              : izobox.type}
+            {type === IzoboxType.basicWithoutWindow ? IzoboxType.basic : type}
           </Type>
         </h3>
         <IzoboxContainer>
           <Gallery>
-            <Slider sliderPhotos={izobox.sliderPhotos} />
-            <img src={izobox.photo} />
+            <Slider sliderPhotos={sliderPhotos} />
+            <img src={photo} />
           </Gallery>
           <Properties>
             <IzoboxTypeSelection />
-            {(izobox.type === IzoboxType.basic ||
-              izobox.type === IzoboxType.basicWithoutWindow) && <BasicIzobox />}
-            {izobox.type === IzoboxType.pro && <ProIzobox />}
+            {(type === IzoboxType.basic ||
+              type === IzoboxType.basicWithoutWindow) && <BasicIzobox />}
+            {type === IzoboxType.pro && <ProIzobox />}
           </Properties>
         </IzoboxContainer>
       </div>

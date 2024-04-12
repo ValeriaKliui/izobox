@@ -1,7 +1,7 @@
 import { useContentModal } from "@hooks/useContentModal";
 import { Modal } from "@shared/Modals";
 import { ContentModal } from "@shared/Modals/ContentModal";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, memo, useEffect, useRef, useState } from "react";
 
 import { SliderProps } from "./interfaces";
 import {
@@ -13,7 +13,7 @@ import {
   Wrapper,
 } from "./styled";
 
-export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
+export const Slider: FC<SliderProps> = memo(({ sliderPhotos }) => {
   const photoRef = useRef<HTMLImageElement>(null);
   const [elemHeight, setElemHeight] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -83,4 +83,4 @@ export const Slider: FC<SliderProps> = ({ sliderPhotos }) => {
       </Modal>
     </>
   );
-};
+});

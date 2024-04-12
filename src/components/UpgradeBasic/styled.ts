@@ -28,7 +28,6 @@ export const Option = styled.div`
   grid-template-columns: repeat(3, auto);
   align-items: center;
   gap: 1em 2em;
-  backdrop-filter: blur(20px);
   box-shadow: 0 1px 24px -1px rgba(0, 0, 0, 0.1);
 `;
 export const Gallery = styled.div`

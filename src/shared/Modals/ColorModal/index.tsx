@@ -8,7 +8,7 @@ import {
   selectColorInside,
   selectColorOutside,
 } from "@store/izobox/izoboxSlice";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { ColorType } from "./interfaces";
 import { Color, Colors, RadioContainer } from "./styled";
@@ -19,12 +19,11 @@ export const ColorModal = () => {
   const colorOutside = useAppSelector(selectColorOutside);
   const { izobox } = useIzobox();
   const { allColors } = izobox;
-
   const [colorType, setColorType] = useState(ColorType.inside);
 
-  const handleChange = (colorType: ColorType) => {
+  const handleChange = useCallback((colorType: ColorType) => {
     setColorType(colorType);
-  };
+  }, []);
 
   const chooseColor = (color: ColorInside | ColorOutside) => {
     if (colorType === ColorType.inside) {
@@ -35,18 +34,20 @@ export const ColorModal = () => {
     }
   };
 
+  const radioValues = useMemo(
+    () => [
+      { value: ColorType.inside, text: "Цвет внутри" },
+      { value: ColorType.outside, text: "Цвет снаружи" },
+    ],
+    [],
+  );
+
   return (
     <>
       <div className="flex-col-gap">
         <p className="bold">Выберите тип</p>
         <RadioContainer>
-          <RadioButtons
-            values={[
-              { value: ColorType.inside, text: "Цвет внутри" },
-              { value: ColorType.outside, text: "Цвет снаружи" },
-            ]}
-            handleChange={handleChange}
-          />
+          <RadioButtons values={radioValues} handleChange={handleChange} />
         </RadioContainer>
       </div>
       <Colors>

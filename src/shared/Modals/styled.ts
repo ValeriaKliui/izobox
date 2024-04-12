@@ -11,6 +11,7 @@ export const Shadow = styled.div<{ $isOpened: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 `;
 export const Container = styled.div`
   background: ${({ theme: { colors } }) => colors.white};
