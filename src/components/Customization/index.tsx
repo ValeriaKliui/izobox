@@ -1,6 +1,6 @@
 import { Button } from "@shared/Button";
 import { BiggestText } from "@shared/Typography/Typography";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { AccessoriesForm } from "./AccessoriesForm";
@@ -14,13 +14,14 @@ export const Customization = () => {
   const navigate = useNavigate();
   const [currentStage, setCurrentStage] = useState(0);
   const stagesAmount = 4;
-  const increaseStage = () => {
+
+  const increaseStage = useCallback(() => {
     if (currentStage < stagesAmount - 1) setCurrentStage((prev) => prev + 1);
     if (currentStage === StagesEnum.Fourth) navigate("/order");
-  };
-  const decreaseStage = () => {
+  }, [currentStage, navigate]);
+  const decreaseStage = useCallback(() => {
     if (currentStage > 0) setCurrentStage((prev) => prev - 1);
-  };
+  }, [currentStage]);
 
   const defineNextButtonText = () => {
     switch (currentStage) {

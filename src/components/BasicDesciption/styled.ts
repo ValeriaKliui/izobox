@@ -1,9 +1,14 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 3em;
+  ${devices.md} {
+    flex-direction: column;
+    gap: 2em;
+  }
 `;
 export const Dimensions = styled.div`
   display: grid;
@@ -19,4 +24,7 @@ export const StyledLi = styled.li`
 `;
 export const Title = styled.h5`
   margin-bottom: 1.5em;
+  ${devices.md} {
+    margin-bottom: 0.5em;
+  }
 `;

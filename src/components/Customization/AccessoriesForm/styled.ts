@@ -1,4 +1,5 @@
 import DownloadSvg from "@assets/icons/download.svg?react";
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const FormContainer = styled.form`
@@ -13,6 +14,9 @@ export const TextArea = styled.textarea`
   border: 2px solid ${({ theme: { colors } }) => colors.sub};
   border-radius: ${({ theme: { radiuses } }) => radiuses.small};
   padding: 1em;
+  ${devices.lg} {
+    width: 100%;
+  }
 `;
 export const FileContainer = styled.label`
   position: relative;

@@ -9,6 +9,7 @@ import MontserratSemiBoldWoff2 from "@assets/fonts/Montserrat-SemiBold.woff2";
 import PoppinsTtf from "@assets/fonts/Poppinsregular.ttf";
 import PoppinsWoff from "@assets/fonts/Poppinsregular.woff";
 import PoppinsWoff2 from "@assets/fonts/Poppinsregular.woff2";
+import { devices } from "@providers/Theme/constants";
 import { createGlobalStyle } from "styled-components";
 
 const styled = { createGlobalStyle };
@@ -53,6 +54,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     margin: 0;
     font-size: 16px;
     font-family: Montserrat;
+    ${devices.md} {
+      font-size: 14px;
+    }
   }
   #root {
     height: 100%;
@@ -94,14 +98,23 @@ export const GlobalStyles = styled.createGlobalStyle`
   h2 {
     font-family: Montserrat-Bold;
     font-size: 3.1em;
+    ${devices.md} {
+      font-size: 2.1em;
+    }
   }
   h3 {
     font-family: Montserrat-SemiBold;
     font-size: 2.5em;
+    ${devices.md} {
+      font-size: 2.1em;
+    }
   }
   h4 {
     font-family: Montserrat-Bold;
     font-size: 1.8em;
+    ${devices.md} {
+      font-size: 1.4em;
+    }
   }
   h5 {
     font-family: Montserrat-Bold;
@@ -119,6 +132,12 @@ export const GlobalStyles = styled.createGlobalStyle`
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
+    ${devices.lg} {
+      max-width: 800px;
+    }
+    ${devices.md} {
+      max-width: 500px;
+    }
   }
   .semibold {
     font-family: Montserrat-SemiBold;

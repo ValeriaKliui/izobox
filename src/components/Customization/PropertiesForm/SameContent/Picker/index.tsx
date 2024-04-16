@@ -1,10 +1,10 @@
-import { FC, useState } from "react";
+import { FC, memo, useState } from "react";
 
 import { PickerProps } from "./interfaces";
 import { Option, Options } from "./styled";
 import { Container } from "./styled";
 
-export const Picker: FC<PickerProps> = ({ title, values }) => {
+export const Picker: FC<PickerProps> = memo(({ title, values }) => {
   const [choosenValue, setChoosenValue] = useState(values[0]);
 
   const onClick = (value: string) => setChoosenValue(value);
@@ -25,4 +25,4 @@ export const Picker: FC<PickerProps> = ({ title, values }) => {
       </Options>
     </Container>
   );
-};
+});

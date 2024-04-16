@@ -6,12 +6,12 @@ import {
   selectColorInside,
   selectColorOutside,
 } from "@store/izobox/izoboxSlice";
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { ColorInside, ColorOutside, ColorsProps } from "./interfaces";
 import { Color, ColorsContainer, Container } from "./styled";
 
-export const Colors: FC<ColorsProps> = ({ colors, title, colorType }) => {
+export const Colors: FC<ColorsProps> = memo(({ colors, title, colorType }) => {
   const dispatch = useAppDispatch();
   const colorInside = useAppSelector(selectColorInside);
   const colorOutside = useAppSelector(selectColorOutside);
@@ -54,4 +54,4 @@ export const Colors: FC<ColorsProps> = ({ colors, title, colorType }) => {
       </ColorsContainer>
     </Container>
   );
-};
+});

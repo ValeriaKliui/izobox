@@ -1,13 +1,13 @@
 import { RadioButtons } from "@components/RadioButtons";
 import { Range } from "@shared/Range";
-import { FC, Fragment, useCallback, useMemo, useState } from "react";
+import { FC, Fragment, memo, useCallback, useMemo, useState } from "react";
 
 import { SameContentProps } from "./interfaces";
 import { Picker } from "./Picker";
 import { RangeContainer } from "./styled";
 import { Container } from "./styled";
 
-export const SameContent: FC<SameContentProps> = ({ items, isOpened }) => {
+export const SameContent: FC<SameContentProps> = memo(({ items, isOpened }) => {
   const radioValues = useMemo(
     () => items.map(({ title }) => ({ value: title, text: title })),
     [items],
@@ -34,7 +34,7 @@ export const SameContent: FC<SameContentProps> = ({ items, isOpened }) => {
             $isOpened={isOpened}
           >
             {dimensions.map(({ name, initValue }) => (
-              <Range initValue={initValue} name={name} />
+              <Range initValue={initValue} name={name} key={name} />
             ))}
           </RangeContainer>
           {pickers?.map(({ title, values }) => (
@@ -44,4 +44,4 @@ export const SameContent: FC<SameContentProps> = ({ items, isOpened }) => {
       ))}
     </Container>
   );
-};
+});

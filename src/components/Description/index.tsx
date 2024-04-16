@@ -1,3 +1,4 @@
+import { Arrow } from "@components/UpgradeBasic/styled";
 import { useContentModal } from "@hooks/useContentModal";
 import { useIzobox } from "@hooks/useIzobox";
 import { MediumText } from "@shared/Typography/Typography";
@@ -5,6 +6,8 @@ import { FC, useState } from "react";
 
 import { TABS } from "./interfaces";
 import {
+  ArrowContainer,
+  ExtraContainer,
   Iframe,
   Photo,
   PhotoContainer,
@@ -17,12 +20,15 @@ import {
 
 export const Description: FC = () => {
   const [choosenTab, setChoosenTab] = useState<TABS>(TABS.description);
+  const [isDescShown, setIsDescShown] = useState(false);
 
   const chooseTab = (tab: TABS) => () => setChoosenTab(tab);
   const { izobox } = useIzobox();
   const { descriptionText, extraDescriptionComponent, galleryPhotos, videos } =
     izobox;
   const { onContentClick } = useContentModal();
+
+  const toggleDescription = () => setIsDescShown((prev) => !prev);
 
   return (
     <div className="wrapper flex-col-gap">
@@ -41,7 +47,12 @@ export const Description: FC = () => {
       {choosenTab === TABS.description && (
         <>
           <MediumText>{descriptionText}</MediumText>
-          {extraDescriptionComponent}
+          <ExtraContainer $isDescShown={isDescShown}>
+            {extraDescriptionComponent}
+          </ExtraContainer>
+          <ArrowContainer>
+            <Arrow onClick={toggleDescription} $isShown={isDescShown} />
+          </ArrowContainer>
         </>
       )}
       {choosenTab === TABS.photo && (

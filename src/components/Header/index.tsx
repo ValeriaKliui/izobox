@@ -7,7 +7,15 @@ import YtIcon from "@assets/icons/yt.svg?react";
 import { Nav } from "@components/Nav";
 import { Logo } from "@shared/Logo";
 
-import { Contact, Contacts, HeaderContainer, IconsContainer } from "./styled";
+import {
+  Contact,
+  Contacts,
+  ContactsContainer,
+  HeaderContainer,
+  IconsContainer,
+  NavContainer,
+  NetworksContainer,
+} from "./styled";
 
 export const Networks = () => (
   <IconsContainer>
@@ -33,13 +41,14 @@ export const ContactsItem = () => (
 export const Header = () => (
   <HeaderContainer className="wrapper">
     <Logo />
-    <Nav />
-    <ContactsItem />
-    <IconsContainer>
-      <TgIcon />
-      <IgIcon />
-      <YtIcon />
-      <WpIcon />
-    </IconsContainer>
+    <NavContainer>
+      <Nav />
+    </NavContainer>
+    <ContactsContainer>
+      <ContactsItem />
+    </ContactsContainer>
+    <NetworksContainer>
+      <Networks />
+    </NetworksContainer>
   </HeaderContainer>
 );

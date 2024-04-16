@@ -1,4 +1,4 @@
-import { theme } from "@providers/Theme/constants";
+import { devices, theme } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 import { ButtonStyledProps } from "./interfaces";
@@ -40,5 +40,8 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
     background-color: ${({ theme: { colors } }) => colors.main};
     color: ${({ theme: { colors } }) => colors.white};
     border-color: transparent;
+  }
+  ${devices.md} {
+    width: 100%;
   }
 `;

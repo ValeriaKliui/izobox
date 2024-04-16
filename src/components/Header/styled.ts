@@ -1,3 +1,4 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -23,4 +24,24 @@ export const IconsContainer = styled.div`
   gap: 0.5em;
   align-items: end;
   width: fit-content;
+  ${devices.md} {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+`;
+export const NavContainer = styled.div`
+  ${devices.md} {
+    display: none;
+  }
+`;
+export const NetworksContainer = styled.div`
+  ${devices.md} {
+    display: none;
+  }
+`;
+export const ContactsContainer = styled.div`
+  ${devices.md} {
+    display: none;
+  }
 `;

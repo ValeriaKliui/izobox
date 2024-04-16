@@ -1,4 +1,5 @@
 import { useContentModal } from "@hooks/useContentModal";
+import { useWindowWidth } from "@react-hook/window-size";
 import { Modal } from "@shared/Modals";
 import { ContentModal } from "@shared/Modals/ContentModal";
 import { FC, memo, useEffect, useRef, useState } from "react";
@@ -15,6 +16,7 @@ import {
 
 export const Slider: FC<SliderProps> = memo(({ sliderPhotos }) => {
   const photoRef = useRef<HTMLImageElement>(null);
+  const windowWidth = useWindowWidth();
   const [elemHeight, setElemHeight] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
   const [isArrowDisabled, setIsArrowsDisabled] = useState({
@@ -56,7 +58,7 @@ export const Slider: FC<SliderProps> = memo(({ sliderPhotos }) => {
   useEffect(() => {
     const heightElem = photoRef?.current?.getBoundingClientRect().height;
     if (heightElem) setElemHeight(heightElem);
-  }, []);
+  }, [windowWidth]);
 
   return (
     <>

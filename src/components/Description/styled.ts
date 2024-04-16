@@ -1,3 +1,4 @@
+import { devices } from "@providers/Theme/constants";
 import { BigText } from "@shared/Typography/Typography";
 import styled from "styled-components";
 
@@ -17,11 +18,25 @@ export const Tab = styled(BigText)<{ $isChoosen: boolean }>`
     border-bottom: 3px solid ${({ theme: { colors } }) => colors.dark};
     color: ${({ theme: { colors } }) => colors.dark};
   }
+  ${devices.md} {
+    border-bottom: unset;
+    &:hover {
+      border-bottom: unset;
+    }
+  }
+`;
+export const ArrowContainer = styled.div`
+  align-self: center;
+`;
+export const ExtraContainer = styled.div<{ $isDescShown: boolean }>`
+  ${devices.md} {
+    display: ${({ $isDescShown }) => ($isDescShown ? "block" : "none")};
+  }
 `;
 
 export const Photos = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1em;
 `;
 export const PhotoContainer = styled.div`
@@ -39,6 +54,10 @@ export const Videos = styled.div`
   grid-template-columns: 3fr 1fr;
   grid-auto-flow: column;
   gap: 2em;
+  ${devices.md} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const Video = styled.div`
   &:first-child {

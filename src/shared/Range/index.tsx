@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, memo, useState } from "react";
 
 import { RangeProps } from "./interfaces";
 import {
@@ -9,7 +9,7 @@ import {
   RangeStyled,
 } from "./styled";
 
-export const Range: FC<RangeProps> = ({ initValue, name }) => {
+export const Range: FC<RangeProps> = memo(({ initValue, name }) => {
   const [value, setValue] = useState(initValue);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,4 +34,4 @@ export const Range: FC<RangeProps> = ({ initValue, name }) => {
       />
     </Container>
   );
-};
+});

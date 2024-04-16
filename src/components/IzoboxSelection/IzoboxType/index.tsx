@@ -4,7 +4,7 @@ import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { Button } from "@shared/Button";
 import { resetColorsChoosen } from "@store/izobox/izoboxSlice";
 
-import { FlexGap } from "../styled";
+import { Container } from "./styled";
 
 export const IzoboxTypeSelection = () => {
   const { izobox, chooseIzobox } = useIzobox();
@@ -16,7 +16,7 @@ export const IzoboxTypeSelection = () => {
   };
 
   return (
-    <FlexGap>
+    <Container>
       {Object.values(IzoboxType)
         .filter((type) => type !== IzoboxType.basicWithoutWindow)
         .map((izoboxType) => (
@@ -32,6 +32,6 @@ export const IzoboxTypeSelection = () => {
             {izoboxType}
           </Button>
         ))}
-    </FlexGap>
+    </Container>
   );
 };

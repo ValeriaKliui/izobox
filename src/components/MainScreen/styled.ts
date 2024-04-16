@@ -1,14 +1,19 @@
 import Arrow from "@assets/icons/arrow.svg";
 import Izobox from "@assets/img/IzoBox.png";
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: url(${Izobox}) no-repeat;
+  ${devices.lg} {
+    gap: 4em;
+  }
 `;
 export const Preview = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 export const TextContainer = styled.div`
   display: flex;
@@ -16,11 +21,17 @@ export const TextContainer = styled.div`
   gap: 1.5em;
   flex-basis: 67%;
   margin-top: 6em;
+  ${devices.md} {
+    margin-top: 0;
+  }
 `;
 export const AboutContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 2em;
+  ${devices.lg} {
+    flex-direction: column;
+  }
 `;
 export const TextAbout = styled.div`
   flex: 1 1 0;
