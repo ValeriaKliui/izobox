@@ -1,4 +1,5 @@
 import ArrowSvg from "@assets/icons/arr.svg?react";
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -13,6 +14,18 @@ export const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${devices.md} {
+    height: 400px;
+    width: 400px;
+  }
+  ${devices.sm} {
+    height: 200px;
+    width: 200px;
+  }
+  ${devices.xs} {
+    height: 150px;
+    width: 150px;
+  }
 `;
 export const Img = styled.img`
   width: 100%;

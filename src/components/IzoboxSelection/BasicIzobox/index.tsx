@@ -7,7 +7,7 @@ import { ColorType } from "@shared/Modals/ColorModal/interfaces";
 import { openColorModal } from "@store/app/appSlice";
 import { Link } from "react-router-dom";
 
-import { FlexGap } from "../styled";
+import { ButtonsContainer } from "./styled";
 import { TotalPrice } from "./TotalPrice";
 import { WindowsSelection } from "./WindowsSelection";
 
@@ -34,12 +34,12 @@ export const BasicIzobox = () => {
         Все цвета
       </p>
       <TotalPrice />
-      <FlexGap>
+      <ButtonsContainer>
         <Link to={PATHS.ORDER}>
           <Button>Купить</Button>
         </Link>
         <Button sub>В кредит</Button>
-      </FlexGap>
+      </ButtonsContainer>
     </>
   );
 };

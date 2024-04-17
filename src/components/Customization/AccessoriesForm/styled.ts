@@ -47,6 +47,15 @@ export const InputFile = styled.input`
 
   &::file-selector-button:active {
     padding: 15em 20em;
+    ${devices.md} {
+      padding: 10em 15em;
+    }
+    ${devices.sm} {
+      padding: 10em;
+    }
+    ${devices.xs} {
+      padding: 7em;
+    }
   }
   &::file-selector-button {
     color: transparent;

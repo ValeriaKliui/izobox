@@ -15,7 +15,7 @@ export const RadioButtons: FC<RadioButtonsProps> = memo(
 
     return (
       <>
-        {values.map(({ text, value }) => (
+        {values.map(({ text, value = "" }) => (
           <Fragment key={value}>
             {text && (
               <Label className={isChecked(value) ? classNameForActive : ""}>

@@ -1,3 +1,4 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const Colors = styled.div`
@@ -27,6 +28,15 @@ export const Colors = styled.div`
     background-clip: padding-box;
     cursor: pointer;
   }
+  ${devices.md} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  ${devices.sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  ${devices.xs} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
   border-radius: ${({ theme: { radiuses } }) => radiuses.small};
@@ -39,6 +49,9 @@ export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`
       $isChoosen ? colors.main : "unset"};
   outline-offset: 2px;
   box-shadow: 0 1px 5px 0 rgba(0, 53, 133, 0.25);
+  ${devices.xs} {
+    width: unset;
+  }
 `;
 export const RadioContainer = styled.div`
   display: flex;

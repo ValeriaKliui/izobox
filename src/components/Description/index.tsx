@@ -1,6 +1,7 @@
 import { Arrow } from "@components/UpgradeBasic/styled";
 import { useContentModal } from "@hooks/useContentModal";
 import { useIzobox } from "@hooks/useIzobox";
+import { IzoboxType } from "@providers/IzoboxProvider/interfaces";
 import { MediumText } from "@shared/Typography/Typography";
 import { FC, useState } from "react";
 
@@ -24,8 +25,13 @@ export const Description: FC = () => {
 
   const chooseTab = (tab: TABS) => () => setChoosenTab(tab);
   const { izobox } = useIzobox();
-  const { descriptionText, extraDescriptionComponent, galleryPhotos, videos } =
-    izobox;
+  const {
+    descriptionText,
+    extraDescriptionComponent,
+    galleryPhotos,
+    videos,
+    type,
+  } = izobox;
   const { onContentClick } = useContentModal();
 
   const toggleDescription = () => setIsDescShown((prev) => !prev);
@@ -50,9 +56,11 @@ export const Description: FC = () => {
           <ExtraContainer $isDescShown={isDescShown}>
             {extraDescriptionComponent}
           </ExtraContainer>
-          <ArrowContainer>
-            <Arrow onClick={toggleDescription} $isShown={isDescShown} />
-          </ArrowContainer>
+          {type !== IzoboxType.pro && (
+            <ArrowContainer>
+              <Arrow onClick={toggleDescription} $isShown={isDescShown} />
+            </ArrowContainer>
+          )}
         </>
       )}
       {choosenTab === TABS.photo && (

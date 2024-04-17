@@ -40,6 +40,15 @@ export const Gallery = styled.div`
   display: flex;
   gap: 1em;
   flex: 1 1 0;
+  ${devices.sm} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 1em;
+    grid-auto-flow: row dense;
+  }
+  ${devices.xs} {
+    justify-items: center;
+  }
 `;
 export const Photo = styled.img`
   box-shadow: 0 7px 15px 0 rgba(0, 53, 133, 0.25);

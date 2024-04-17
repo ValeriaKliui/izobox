@@ -38,10 +38,24 @@ export const Photos = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1em;
+  ${devices.sm} {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  ${devices.xs} {
+    justify-items: center;
+  }
 `;
 export const PhotoContainer = styled.div`
   width: 240px;
   height: 240px;
+  ${devices.sm} {
+    width: 160px;
+    height: 160px;
+  }
+  ${devices.sm} {
+    width: 100%;
+    height: 100%;
+  }
 `;
 export const Photo = styled.img`
   width: 100%;

@@ -6,8 +6,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   sub?: boolean;
 }
 export type ButtonStyledProps = {
-  [Property in keyof Omit<
+  [Property in keyof Omit<ButtonProps, "children"> as `$${Property}`]: Omit<
     ButtonProps,
     "children"
-  > as `$${Property}`]: () => Omit<ButtonProps, "children">[Property];
+  >[Property];
 };

@@ -8,10 +8,13 @@ export const Container = styled.div`
 `;
 export const ColorsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 40px);
+  grid-template-columns: repeat(auto-fit, 40px);
+  grid-auto-flow: row dense;
   gap: 0.5em;
   ${devices.lg} {
-    grid-template-columns: repeat(16, 40px);
+  }
+  ${devices.sm} {
+    gap: 1em 0.5em;
   }
 `;
 export const Color = styled.div<{ $color: string; $isChoosen: boolean }>`

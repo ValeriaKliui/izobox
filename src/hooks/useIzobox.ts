@@ -20,7 +20,10 @@ export const useIzobox = () => {
   );
 
   const value: IzoboxContextType = useMemo(
-    () => ({ izobox: IZOBOXES[izoboxType], chooseIzobox: chooseIzoboxType }),
+    () => ({
+      izobox: IZOBOXES[izoboxType],
+      chooseIzobox: chooseIzoboxType,
+    }),
     [izoboxType, chooseIzoboxType],
   );
 

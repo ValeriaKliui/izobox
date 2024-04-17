@@ -1,4 +1,3 @@
-import { ColorInside, ColorOutside } from "@shared/Colors/interfaces";
 import { ReactNode } from "react";
 
 export interface Izobox {
@@ -10,7 +9,7 @@ export interface Izobox {
   type: IzoboxType;
   colorsInside: string[];
   colorsOutside: string[];
-  allColors?: (ColorInside | ColorOutside)[];
+  allColors?: string[];
   videos: string[];
   photoWithoutWindow?: string;
   windows?: { with: string; without: string };

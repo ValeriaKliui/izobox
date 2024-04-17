@@ -81,7 +81,7 @@ export const Slider: FC<SliderProps> = memo(({ sliderPhotos }) => {
         <SecondArrow onClick={showNext} $disabled={isArrowDisabled.second} />
       </Wrapper>
       <Modal isOpened={isModalOpened} onClose={onContentClose}>
-        <ContentModal contentSrc={sliderPhotos} />
+        <ContentModal />
       </Modal>
     </>
   );

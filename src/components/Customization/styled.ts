@@ -1,9 +1,14 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const StagesContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 2em;
+  ${devices.xs} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 export const Stages = styled.div`
   display: flex;
@@ -22,4 +27,8 @@ export const Controls = styled.div`
   justify-content: center;
   align-items: center;
   gap: 6em;
+  ${devices.md} {
+    flex-direction: column;
+    gap: 1em;
+  }
 `;

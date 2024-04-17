@@ -1,3 +1,4 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -5,6 +6,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${devices.xs} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
 `;
 export const Options = styled.div`
   border-radius: ${({ theme: { radiuses } }) => radiuses.big};

@@ -17,6 +17,12 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 0;
   }
+  ${devices.sm} {
+    max-width: 290px !important;
+  }
+  ${devices.xs} {
+    max-width: 200px !important;
+  }
 `;
 export const ReviewContainer = styled.div`
   position: relative;
@@ -39,6 +45,9 @@ export const ReviewContainer = styled.div`
     right: 0;
     ${devices.lg} {
       bottom: 80px;
+    }
+    ${devices.xs} {
+      bottom: 50px;
     }
   }
   ${devices.lg} {

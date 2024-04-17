@@ -4,8 +4,19 @@ import PhoneIcon from "@assets/icons/phone.svg?react";
 import TgIcon from "@assets/icons/tg.svg?react";
 import WpIcon from "@assets/icons/wp.svg?react";
 import YtIcon from "@assets/icons/yt.svg?react";
+import { Burger } from "@components/Burger";
+import { MobileMenu } from "@components/MobileMenu";
 import { Nav } from "@components/Nav";
+import { useAppDispatch, useAppSelector } from "@hooks/typedHooks";
+import { ScreenSizes } from "@providers/Theme/interfaces";
+import { useWindowWidth } from "@react-hook/window-size";
 import { Logo } from "@shared/Logo";
+import {
+  closeMobileMenu,
+  openMobileMenu,
+  selectIsMobileMenuOpened,
+} from "@store/app/appSlice";
+import { useEffect } from "react";
 
 import {
   Contact,
@@ -38,17 +49,35 @@ export const ContactsItem = () => (
   </Contacts>
 );
 
-export const Header = () => (
-  <HeaderContainer className="wrapper">
-    <Logo />
-    <NavContainer>
-      <Nav />
-    </NavContainer>
-    <ContactsContainer>
-      <ContactsItem />
-    </ContactsContainer>
-    <NetworksContainer>
-      <Networks />
-    </NetworksContainer>
-  </HeaderContainer>
-);
+export const Header = () => {
+  const windowWidth = useWindowWidth();
+  const isMobileMenuOpened = useAppSelector(selectIsMobileMenuOpened);
+  const dispatch = useAppDispatch();
+  const toggleMenu = () =>
+    isMobileMenuOpened
+      ? dispatch(closeMobileMenu())
+      : dispatch(openMobileMenu());
+
+  useEffect(() => {
+    if (windowWidth > ScreenSizes.md) dispatch(closeMobileMenu());
+  }, [windowWidth, dispatch]);
+
+  return (
+    <>
+      <HeaderContainer className="wrapper">
+        <Logo />
+        <NavContainer>
+          <Nav />
+        </NavContainer>
+        <ContactsContainer>
+          <ContactsItem />
+        </ContactsContainer>
+        <NetworksContainer>
+          <Networks />
+        </NetworksContainer>
+        <Burger onClick={toggleMenu} isOpened={isMobileMenuOpened} />
+      </HeaderContainer>
+      <MobileMenu isOpened={isMobileMenuOpened} />
+    </>
+  );
+};

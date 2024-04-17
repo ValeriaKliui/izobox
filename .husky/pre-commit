@@ -1,4 +1,3 @@
 git add .
 npx lint-staged
 npm run lint
-git push origin main

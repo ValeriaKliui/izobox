@@ -46,6 +46,10 @@ export const GlobalStyles = styled.createGlobalStyle`
       url(${PoppinsWoff2}) format("woff2"),
       url(${PoppinsTtf}) format("ttf");
   }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
   html,
   body {
     height: 100%;
@@ -136,7 +140,13 @@ export const GlobalStyles = styled.createGlobalStyle`
       max-width: 800px;
     }
     ${devices.md} {
-      max-width: 500px;
+      max-width: 550px;
+    }
+    ${devices.sm} {
+      max-width: 370px;
+    }
+    ${devices.xs} {
+      max-width: 280px;
     }
   }
   .semibold {

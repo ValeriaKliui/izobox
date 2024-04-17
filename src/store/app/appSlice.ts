@@ -7,6 +7,7 @@ interface AppState {
   isContentModalOpened: boolean;
   clickedContentIndex: number;
   contentSrc: string[];
+  isMenuMobileOpened: boolean;
 }
 
 export const appSlice = createSlice({
@@ -16,6 +17,7 @@ export const appSlice = createSlice({
     isContentModalOpened: false,
     clickedContentIndex: 0,
     contentSrc: [],
+    isMenuMobileOpened: false,
   },
   reducers: {
     openColorModal: (state) => {
@@ -36,6 +38,12 @@ export const appSlice = createSlice({
     chooseContentSrc: (state, action: PayloadAction<string[]>) => {
       state.contentSrc = action.payload;
     },
+    openMobileMenu: (state) => {
+      state.isMenuMobileOpened = true;
+    },
+    closeMobileMenu: (state) => {
+      state.isMenuMobileOpened = false;
+    },
   },
 });
 
@@ -46,12 +54,16 @@ export const {
   closeContentModal,
   chooseContentIndex,
   chooseContentSrc,
+  openMobileMenu,
+  closeMobileMenu,
 } = appSlice.actions;
 
 export const selectIsColorModalOpened = (state: RootState) =>
   state.app.isColorModalOpened;
 export const selectIsContentModalOpened = (state: RootState) =>
   state.app.isContentModalOpened;
+export const selectIsMobileMenuOpened = (state: RootState) =>
+  state.app.isMenuMobileOpened;
 export const selectContentIndexClicked = (state: RootState) =>
   state.app.clickedContentIndex;
 export const selectContentSrc = (state: RootState) => state.app.contentSrc;

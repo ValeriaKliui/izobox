@@ -1,3 +1,4 @@
+import { devices } from "@providers/Theme/constants";
 import styled from "styled-components";
 
 export const InputStyled = styled.input`
@@ -8,5 +9,8 @@ export const InputStyled = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${({ theme: { colors } }) => colors.main};
+  }
+  ${devices.xs} {
+    width: 250px;
   }
 `;
