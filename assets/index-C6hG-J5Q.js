@@ -18,6 +18,7 @@ import{j as t,r as n,a as Ne}from"./react-Dk2Bg5U_.js";import{u as s,t as Pe,d a
   justify-content: space-between;
   ${o.lg} {
     flex-wrap: wrap;
+    gap: 2em;
   }
   ${o.md} {
     flex-wrap: unset;
@@ -807,7 +808,9 @@ import{j as t,r as n,a as Ne}from"./react-Dk2Bg5U_.js";import{u as s,t as Pe,d a
   }
 `,Ls=s.div`
   display: flex;
-  flex-direction: column;
+  ${o.md} {
+    flex-direction: column;
+  }
 `,zs=s.div`
   display: flex;
   flex-direction: column;
