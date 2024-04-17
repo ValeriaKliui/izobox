@@ -23,6 +23,7 @@ export const Container = styled.div`
   justify-content: space-between;
   ${devices.lg} {
     flex-wrap: wrap;
+    gap: 2em;
   }
   ${devices.md} {
     flex-wrap: unset;

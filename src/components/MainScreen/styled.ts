@@ -13,7 +13,9 @@ export const Container = styled.div`
 `;
 export const Preview = styled.div`
   display: flex;
-  flex-direction: column;
+  ${devices.md} {
+    flex-direction: column;
+  }
 `;
 export const TextContainer = styled.div`
   display: flex;
