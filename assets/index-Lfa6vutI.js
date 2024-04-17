@@ -1090,4 +1090,4 @@ import{j as t,r as n,a as Ne}from"./react-Dk2Bg5U_.js";import{u as s,t as Pe,d a
   .sub-color {
     color: ${({theme:{colors:e}})=>e.sub};
   }
-`,po=Te([{element:t.jsx(yt,{}),path:A.MAIN,children:[{element:t.jsx(Zs,{}),index:!0},{element:t.jsx(Js,{}),path:"politics"},{path:A.ORDER,element:t.jsx(Gs,{})}]}]);Re.createRoot(document.getElementById("root")).render(t.jsx(Ne.StrictMode,{children:t.jsx(qe,{store:et,children:t.jsxs(F1,{children:[t.jsx(uo,{}),t.jsx(D1,{children:t.jsx(He,{router:po})})]})})}));
+`,po=Te([{element:t.jsx(yt,{}),path:A.MAIN,children:[{element:t.jsx(Zs,{}),index:!0},{element:t.jsx(Js,{}),path:"politics"},{path:A.ORDER,element:t.jsx(Gs,{})}]}],{basename:"/izobox"});Re.createRoot(document.getElementById("root")).render(t.jsx(Ne.StrictMode,{children:t.jsx(qe,{store:et,children:t.jsxs(F1,{children:[t.jsx(uo,{}),t.jsx(D1,{children:t.jsx(He,{router:po})})]})})}));
