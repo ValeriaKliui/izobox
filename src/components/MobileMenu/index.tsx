@@ -2,8 +2,8 @@ import { ContactsItem, Networks } from "@components/Header";
 import { Nav } from "@components/Nav";
 import { FC, useEffect } from "react";
 
-import { ContactsContainer, Container } from "./styled";
 import { MobileMenuProps } from "./interfaces";
+import { ContactsContainer, Container } from "./styled";
 
 export const MobileMenu: FC<MobileMenuProps> = ({ isOpened }) => {
   useEffect(() => {
